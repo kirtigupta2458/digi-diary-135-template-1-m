@@ -31,27 +31,6 @@ $(function () {
             }
         });
     });
-    $("#save_button").click(function () {
-        save_data = {
-            "date": display_date,
-            "text": $("#text").val(),
-            "emotion": predicted_emotion
-        }
-        $.ajax({
-            type: 'POST',
-            url: "/save-entry",
-            data: JSON.stringify(save_data),
-            dataType: "json",
-            contentType: 'application/json',
-            success: function () {
-                alert("Your entry has been saved successfully!")
-                window.location.reload()
-            },
-            error: function (result) {
-                alert(result.responseJSON.message)
-            }
-        });
-
-    });
+    
 })
 
